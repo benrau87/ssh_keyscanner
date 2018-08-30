@@ -30,7 +30,7 @@ Note: I only bothered testing on Kali
 
 
 ## Licence
-[Licenced under the WTFPL (do Whatever The Fuck you want Public Licence)][Licence]
+[Licenced under the WTFPL][Licence]
 
 ## Changelog  
 18-01-2015 (01:26): - Added Tor support on a whim. Completely untested, will get tested in the morning when I wake up.
