@@ -26,30 +26,12 @@ You can get them with ```pip install -r requirements.txt``` or whatever. The res
 
 You may need to run pip install six -upgrade 
 
-Note: I only bothered testing on python2.
+Note: I only bothered testing on Kali
 
-## Todo  
-* Private-Key support so I can also use privkeys as well as pubkeys.
-* Directory of keyfile support.
-* List of hosts support.
-* idk, make a git issue with your ideas...
 
 ## Licence
 [Licenced under the WTFPL (do Whatever The Fuck you want Public Licence)][Licence]
 
-## Beer?
-Send yer cryptologically generated beer tokens to fuel further opensource software:  
-[coinbase, for convenience][coinbase], or the following bitcoin address: `13rZ67tmhi7M3nQ3w87uoNSHUUFmYx7f4V`
-
-## Mandatory asciicast until I finish it and make a proper video  
-[![asciicast](https://asciinema.org/a/0hi7u7c3ju6q2vc4xzt4v7saf.png)](https://asciinema.org/a/0hi7u7c3ju6q2vc4xzt4v7saf)
-
-## Bug Reports and Feature Requests
-Please submit all bug reports and feature requests to the [Github Issue Tracker][tracker]. Give me stacktraces by enabling debug mode.
-
 ## Changelog  
 18-01-2015 (01:26): - Added Tor support on a whim. Completely untested, will get tested in the morning when I wake up.
-
-[coinbase]: https://www.coinbase.com/infodox/
-[Licence]: http://www.wtfpl.net/txt/copying/
-[tracker]: https://github.com/0x27/ssh_keyscanner/issues
+30-8-2018  (11:50): - Add support for raw fingerprint with -k option.
