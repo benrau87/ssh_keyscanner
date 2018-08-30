@@ -6,6 +6,7 @@
 # http://www.iodigitalsec.com/ssh-fingerprint-and-hostkey-with-paramiko-in-python/
 # https://shodan.readthedocs.org/en/latest/
 # https://github.com/ojarva/python-sshpubkeys
+# added finger support https://github.com/benrau87
 # imports here...
 from sshpubkeys import SSHKey # ssh key shit
 import paramiko # for ssh bullshit
@@ -17,7 +18,7 @@ import base64   # base64 encryptin' shit liekpro
 import socks    # for tor support
 import sys      # exits and shit
 # globals.
-SHODAN_API_KEY = "LOL NO GTFO" # change this
+SHODAN_API_KEY = "DScnizamp3fzbcfS02xbpkpP81GOd4dt" # change this
 # colours. don't change these
 RED = "\x1b[1;31m"
 GREEN = "\x1b[1;32m"
@@ -119,6 +120,10 @@ def list_query(hosts, tor=False):
         else:
             remote_query(host=target, port=22, tor=tor)
             
+def finger_query(finger): # done
+    fingerprint = (finger)
+    msg_info("SSH Fingerprint: %s" %(fingerprint))
+    do_shodan(fingerprint)
 
 def local_query(keyfile): # done
     msg_status("Running query using %s" %(keyfile))
@@ -166,6 +171,7 @@ def main():
     # args: -f (file), -i (ip), -p (port)
     parser = argparse.ArgumentParser("ssh public key scanner")
     parser.add_argument("-f", help="SSH PublicKey file")
+    parser.add_argument("-k", help="PublicKey  Fingerprint")
     parser.add_argument("-i", help="Target IP/Host")
     parser.add_argument("-l", help="Target IP/Host list (one per line, in host:port format or just host format)")
     parser.add_argument("-p", help="Target Port (default is 22)", default=22)
@@ -173,6 +179,8 @@ def main():
     args = parser.parse_args()
     if args.f:
         local_query(keyfile=args.f)
+    elif args.k:
+        finger_query(finger=args.k)
     elif args.i:
         if args.t:
             remote_query(host=args.i, port=args.p, tor=True)
@@ -184,7 +192,7 @@ def main():
         else:
             list_query(hosts=args.l)
     elif not args.f or args.i or args.l:
-        parser.error("give me some arguments or get the fuck out")
+        parser.error("No arguments supplied")
     
 if __name__ == "__main__":
     main()
