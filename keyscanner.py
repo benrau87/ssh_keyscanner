@@ -18,7 +18,7 @@ import base64   # base64 encryptin' shit liekpro
 import socks    # for tor support
 import sys      # exits and shit
 # globals.
-SHODAN_API_KEY = "DScnizamp3fzbcfS02xbpkpP81GOd4dt" # change this
+SHODAN_API_KEY = "ADD YO KEY" # change this
 # colours. don't change these
 RED = "\x1b[1;31m"
 GREEN = "\x1b[1;32m"
